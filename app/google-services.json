@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1043956985695",
+    "firebase_url": "https://mlkit-cloudnext.firebaseio.com",
+    "project_id": "mlkit-cloudnext",
+    "storage_bucket": "mlkit-cloudnext.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1043956985695:android:57f7258e916d6f4d",
+        "android_client_info": {
+          "package_name": "app.harshit.firebasemlkit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1043956985695-rath0qae6u0hkq945tgfotk6j7gp5sks.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "app.harshit.firebasemlkit",
+            "certificate_hash": "36a155889435b9499a0b97fd8e85a3bb840d5e16"
+          }
+        },
+        {
+          "client_id": "1043956985695-7da0ka1chte6avmqbu0fac1ea2e33ukd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5UuBxok55HZauiA9cpVTtpwsdg7NQwPA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1043956985695-7da0ka1chte6avmqbu0fac1ea2e33ukd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
