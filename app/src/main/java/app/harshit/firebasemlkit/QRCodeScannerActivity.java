@@ -25,9 +25,9 @@ public class QRCodeScannerActivity extends BaseCameraActivity {
     private void getCodeFromImage(Bitmap bitmap) {
         //TODO : Create a FirebaseVisionImage
 
-        //TODO : Get access to a FirebaseImageDetector
+        //TODO : Get access to a FirebaseBarcodeDetector
 
-        //TODO : Use the detector to detect the labels inside the image
+        //TODO : Use the detector to detect the QR code inside the image
     }
 
     @Override
