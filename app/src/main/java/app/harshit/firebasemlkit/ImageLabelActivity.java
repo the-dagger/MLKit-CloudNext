@@ -4,23 +4,9 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.View;
-import android.view.ViewStub;
-import android.widget.Button;
-import android.widget.ProgressBar;
-import android.widget.TextView;
 
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.ml.vision.FirebaseVision;
-import com.google.firebase.ml.vision.cloud.label.FirebaseVisionCloudLabel;
-import com.google.firebase.ml.vision.cloud.label.FirebaseVisionCloudLabelDetector;
-import com.google.firebase.ml.vision.common.FirebaseVisionImage;
-import com.google.firebase.ml.vision.label.FirebaseVisionLabel;
-import com.google.firebase.ml.vision.label.FirebaseVisionLabelDetector;
 import com.otaliastudios.cameraview.CameraListener;
-
-import java.util.List;
 
 public class ImageLabelActivity extends BaseCameraActivity {
 
