@@ -8,7 +8,7 @@ import android.view.View;
 
 import com.otaliastudios.cameraview.CameraListener;
 
-public class ImageLabelActivity extends BaseCameraActivity {
+public class QRCodeScannerActivity extends BaseCameraActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -17,23 +17,17 @@ public class ImageLabelActivity extends BaseCameraActivity {
             @Override
             public void onPictureTaken(byte[] jpeg) {
                 //Convert ByteArray to a Bitmap
-                getLabelFromDevice(BitmapFactory.decodeByteArray(jpeg, 0, jpeg.length));
+                getCodeFromImage(BitmapFactory.decodeByteArray(jpeg, 0, jpeg.length));
             }
         });
     }
 
-    private void getLabelFromDevice(Bitmap bitmap) {
-
+    private void getCodeFromImage(Bitmap bitmap) {
         //TODO : Create a FirebaseVisionImage
 
         //TODO : Get access to a FirebaseImageDetector
 
         //TODO : Use the detector to detect the labels inside the image
-
-    }
-
-    void getLabelFromCloud(Bitmap bitmap) {
-
     }
 
     @Override
