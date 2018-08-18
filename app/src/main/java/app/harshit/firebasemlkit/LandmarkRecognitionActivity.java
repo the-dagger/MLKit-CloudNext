@@ -1,11 +1,7 @@
 package app.harshit.firebasemlkit;
 
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.location.Location;
-import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.Toast;
 
@@ -18,23 +14,12 @@ import com.google.firebase.ml.vision.cloud.landmark.FirebaseVisionCloudLandmark;
 import com.google.firebase.ml.vision.cloud.landmark.FirebaseVisionCloudLandmarkDetector;
 import com.google.firebase.ml.vision.common.FirebaseVisionImage;
 import com.google.firebase.ml.vision.common.FirebaseVisionLatLng;
-import com.otaliastudios.cameraview.CameraListener;
+import com.wonderkiln.camerakit.CameraKitEventCallback;
+import com.wonderkiln.camerakit.CameraKitImage;
 
 import java.util.List;
 
 public class LandmarkRecognitionActivity extends BaseCameraActivity {
-
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        cameraView.addCameraListener(new CameraListener() {
-            @Override
-            public void onPictureTaken(byte[] jpeg) {
-                //Convert ByteArray to a Bitmap
-                getLandmarkFromImage(BitmapFactory.decodeByteArray(jpeg, 0, jpeg.length));
-            }
-        });
-    }
 
     private void getLandmarkFromImage(Bitmap bitmap) {
         //Create a FirebaseVisionImage
@@ -50,10 +35,10 @@ public class LandmarkRecognitionActivity extends BaseCameraActivity {
                         textView.setText("");
                         for (FirebaseVisionCloudLandmark landmark : firebaseVisionCloudLandmarks) {
 
-                            textView.append("Landmark name  : " + landmark.getLandmark());
+                            textView.append("Landmark name  : " + landmark.getLandmark() + "\n");
                             for (FirebaseVisionLatLng location : landmark.getLocations()) {
-                                textView.append("Latitude : " + location.getLatitude());
-                                textView.append("Longitude : " + location.getLongitude());
+                                textView.append("Latitude : " + location.getLatitude() + "\n");
+                                textView.append("Longitude : " + location.getLongitude() + "\n");
                             }
                         }
                     }
@@ -75,6 +60,11 @@ public class LandmarkRecognitionActivity extends BaseCameraActivity {
     @Override
     public void onClick(View view) {
         progressBar.setVisibility(View.VISIBLE);
-        cameraView.capturePicture();
+        cameraView.captureImage(new CameraKitEventCallback<CameraKitImage>() {
+            @Override
+            public void callback(CameraKitImage cameraKitImage) {
+                getLandmarkFromImage(cameraKitImage.getBitmap());
+            }
+        });
     }
 }
