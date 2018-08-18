@@ -67,7 +67,7 @@ public class LandmarkRecognitionActivity extends BaseCameraActivity {
                 .addOnCompleteListener(new OnCompleteListener<List<FirebaseVisionCloudLandmark>>() {
                     @Override
                     public void onComplete(@NonNull Task<List<FirebaseVisionCloudLandmark>> task) {
-
+                        progressBar.setVisibility(View.GONE);
                     }
                 });
     }
