@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.otaliastudios.cameraview.CameraView;
+import com.wonderkiln.camerakit.CameraView;
 
 //base camera activity to handle camera preview and other things
 public abstract class BaseCameraActivity extends AppCompatActivity implements View.OnClickListener {
