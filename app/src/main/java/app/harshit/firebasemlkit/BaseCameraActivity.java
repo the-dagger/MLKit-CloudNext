@@ -4,12 +4,11 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.view.ViewStub;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.otaliastudios.cameraview.CameraView;
+import com.wonderkiln.camerakit.CameraView;
 
 //base camera activity to handle camera preview and other things
 public abstract class BaseCameraActivity extends AppCompatActivity implements View.OnClickListener {
