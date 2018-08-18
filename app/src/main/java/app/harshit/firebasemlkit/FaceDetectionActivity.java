@@ -31,6 +31,7 @@ public class FaceDetectionActivity extends BaseCameraActivity {
 
     private void getFaceFromImage(Bitmap bitmap) {
         FirebaseVisionImage image = FirebaseVisionImage.fromBitmap(bitmap);
+        //Outline the features we need to detect
         FirebaseVisionFaceDetectorOptions options =
                 new FirebaseVisionFaceDetectorOptions.Builder()
                         .setModeType(FirebaseVisionFaceDetectorOptions.ACCURATE_MODE)
@@ -55,7 +56,7 @@ public class FaceDetectionActivity extends BaseCameraActivity {
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(FaceDetectionActivity.this, "An error occured", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(FaceDetectionActivity.this, "An error occurred", Toast.LENGTH_SHORT).show();
                     }
                 })
                 .addOnCompleteListener(new OnCompleteListener<List<FirebaseVisionFace>>() {
