@@ -11,10 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".QRCodeScannerActivity">
+        <activity android:name=".FaceDetectionActivity">
             <meta-data
                 android:name="com.google.firebase.ml.vision.DEPENDENCIES"
-                android:value="barcode" />
+                android:value="face" />
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
