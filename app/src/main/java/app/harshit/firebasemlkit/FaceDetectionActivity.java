@@ -61,7 +61,7 @@ public class FaceDetectionActivity extends BaseCameraActivity {
                 .addOnCompleteListener(new OnCompleteListener<List<FirebaseVisionFace>>() {
                     @Override
                     public void onComplete(@NonNull Task<List<FirebaseVisionFace>> task) {
-
+                        progressBar.setVisibility(View.GONE);
                     }
                 });
 
