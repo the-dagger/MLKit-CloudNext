@@ -1,9 +1,6 @@
 package app.harshit.firebasemlkit;
 
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.view.View;
 
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -13,23 +10,12 @@ import com.google.firebase.ml.vision.cloud.label.FirebaseVisionCloudLabelDetecto
 import com.google.firebase.ml.vision.common.FirebaseVisionImage;
 import com.google.firebase.ml.vision.label.FirebaseVisionLabel;
 import com.google.firebase.ml.vision.label.FirebaseVisionLabelDetector;
-import com.otaliastudios.cameraview.CameraListener;
+import com.wonderkiln.camerakit.CameraKitEventCallback;
+import com.wonderkiln.camerakit.CameraKitImage;
 
 import java.util.List;
 
 public class ImageLabelActivity extends BaseCameraActivity {
-
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        cameraView.addCameraListener(new CameraListener() {
-            @Override
-            public void onPictureTaken(byte[] jpeg) {
-                //Convert ByteArray to a Bitmap
-                getLabelFromCloud(BitmapFactory.decodeByteArray(jpeg, 0, jpeg.length));
-            }
-        });
-    }
 
     private void getLabelFromDevice(Bitmap bitmap) {
 
@@ -74,6 +60,11 @@ public class ImageLabelActivity extends BaseCameraActivity {
     @Override
     public void onClick(View view) {
         progressBar.setVisibility(View.VISIBLE);
-        cameraView.capturePicture();
+        cameraView.captureImage(new CameraKitEventCallback<CameraKitImage>() {
+            @Override
+            public void callback(CameraKitImage cameraKitImage) {
+                getLabelFromCloud(cameraKitImage.getBitmap());
+            }
+        });
     }
 }
